@@ -63,7 +63,7 @@ def _days_before_month(year, month):
     "year, month -> number of days in year preceeding first day of month."
     if not 1 <= month <= 12:
         raise ValueError('month must be in 1..12', month)
-    return _DAYS_BEFORE_MONTH[month] + (month > 2 and _is_leap(year))
+    return _DAYS_BEFORE_MONTH[month] + (month > 2 and _is_leap(year)) #when month > 2, consider the case of leap year
 
 def _ymd2ord(year, month, day):
     "year, month, day -> ordinal, considering 01-Jan-0001 as day 1."
