@@ -104,7 +104,7 @@ def _ord2ymd(n):
     #
     #     D  M   Y            n              n-1
     #     -- --- ----        ----------     ----------------
-    #     31 Dec -400        -_DI400Y       -_DI400Y -1
+    #     31 Dec -400        -_DI400Y       -_DI400Y -1   # 400 B.C.
     #      1 Jan -399         -_DI400Y +1   -_DI400Y      400-year boundary
     #     ...
     #     30 Dec  000        -1             -2
@@ -116,7 +116,7 @@ def _ord2ymd(n):
     #     31 Dec  400         _DI400Y        _DI400Y -1
     #      1 Jan  401         _DI400Y +1     _DI400Y      400-year boundary
     n -= 1
-    n400, n = divmod(n, _DI400Y)
+    n400, n = divmod(n, _DI400Y)  #n400 -> how many 400 years there are, n -> how many years left
     year = n400 * 400 + 1   # ..., -399, 1, 401, ...
 
     # Now n is the (non-negative) offset, in days, from January 1 of year, to
