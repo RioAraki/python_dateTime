@@ -15,9 +15,19 @@ time3str1, time3str2 = "Sun 13:00-15:00", "Mon 12:00-21:00"
 
 #
 # timedate api
-# five classes: date (year/month/day)/ time (hour, minute, second, microsecond, tzinfo)/ datetime (year, month, day,
+# five classes (types): date (year/month/day)/ time (hour, minute, second, microsecond, tzinfo)/ datetime (year, month, day,
 # hour, minute, second, microsecond, and tzinfo.)/ timedelta (diff btw date and time)/ tzinfo (???)
 
-# There are two kinds of date and time objects: “naive” and “aware”. This distinction refers to whether the object
+# About timezone: There are two kinds of date and time objects: "naive" and "aware". This distinction refers to whether the object
 # has any notion of time zone, daylight saving time, or other kind of algorithmic or political time adjustment.
+
+# Timedelta object
+# A time interval, difference about different times
+d = datetime.timedelta(weeks = 1044, days = 9941, seconds = 1358, microseconds = 1249)
+
+print d
+print repr(d)
+print d.total_seconds()
+
+# date object
 #
