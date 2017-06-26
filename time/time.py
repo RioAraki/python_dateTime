@@ -22,7 +22,7 @@ time3str1, time3str2 = "Sun 13:00-15:00", "Mon 12:00-21:00"
 # has any notion of time zone, daylight saving time, or other kind of algorithmic or political time adjustment.
 
 # Timedelta object
-print "=====time delta====="
+print "\n=====time delta====="
 # A time interval, difference about different times
 d = datetime.timedelta(weeks = 1044, days = 9941, seconds = 1358, microseconds = 1249)
 
@@ -31,7 +31,7 @@ print repr(d)
 print d.total_seconds()
 
 # date object
-print "=====date====="
+print "\n=====date====="
 # year, month, day; value error if date out of range
 print datetime.date.today()
 
@@ -60,5 +60,37 @@ print datetime.date(2004, 1, 4).isocalendar() # 2004/01/04
 print datetime.date(2002, 12, 4).isoformat() #<- default string format of date
 print datetime.date(2002, 12, 4).ctime()
 
+# CALCULATE BIRTHDAY
+print "\nBirthday Calculation"
+today = datetime.date.today()
+print today
+birthday = datetime.date(today.year,4,25)
+if birthday < today:
+    birthday = birthday.replace(year = today.year+1)
+    print birthday
+diff = birthday - today
+print diff.days
+
+
+# example of working with date
+print "\nDate Calculation"
+d = datetime.date.fromordinal(731920)
+print d.strftime("%d/%m/%y")
+print d.strftime("%A %d. %B %Y")
+print 'The {1} is {0:%d}, the {2} is {0:%B}.'.format(d, "day", "month")
+
 #===important===#
 # strftime(format)/__format__(format)
+
+# date object
+print "\n=====datetime====="
+# A single object containing all info from a date to a time object.
+# today()/ now([tz])/utcnow()/fromtimestamp()/utcfromtimestamp()/fromordinal()/combine()/strptime()
+# strptime() -> Return a datetime corresponding to date_string, parsed according to format.
+d = datetime.date(2017, 10, 10)
+t = datetime.time(21,30)
+print datetime.datetime.combine(d,t)
+
+dt = datetime.datetime.strptime("21/11/06 16:30", "%d/%m/%y %H:%M")
+
+print dt
