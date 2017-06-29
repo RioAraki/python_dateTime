@@ -85,12 +85,28 @@ print 'The {1} is {0:%d}, the {2} is {0:%B}.'.format(d, "day", "month")
 # date object
 print "\n=====datetime====="
 # A single object containing all info from a date to a time object.
-# today()/ now([tz])/utcnow()/fromtimestamp()/utcfromtimestamp()/fromordinal()/combine()/strptime()
+# today()/ now([tz])/utcnow()/fromtimestamp()/utcfromtimestamp()/fromordinal()/combine()/strptime()/astimezone()
+# utcoffset()/dst()/tzname()/
 # strptime() -> Return a datetime corresponding to date_string, parsed according to format.
 d = datetime.date(2017, 10, 10)
 t = datetime.time(21,30)
+dt1 = datetime.datetime.combine(d,t)
 print datetime.datetime.combine(d,t)
 
-dt = datetime.datetime.strptime("21/11/06 16:30", "%d/%m/%y %H:%M")
-
+dt = datetime.datetime.strptime("21/11/06 16:30", "%y/%m/%d %H:%M")
 print dt
+# format -> how it parse the input string
+
+# tz -> discuss in tzinfo object
+
+# time object
+print "\n=====time====="
+print "Nothing tricky"
+# possible parameters: datetime.time([hour[, minute[, second[, microsecond[, tzinfo]]]]])
+# time is limited to a day (< 24hr)
+
+# tzinfo object
+print "\n=====tzinfo====="
+print "Not important"
+
+print "\n=====strftime() and strptime()====="
